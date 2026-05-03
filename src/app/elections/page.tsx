@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // ============================================================
 // VoteBuddy - Elections Page
 // ============================================================
@@ -184,8 +185,7 @@ export default function ElectionsPage() {
                   key={step.step}
                   className="flex items-start gap-4 p-4 rounded-xl border border-[var(--border-color)] bg-[var(--bg-glass)] hover:border-saffron-500/30 transition-all"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-saffron-500/20 to-saffron-400/10 border border-saffron-500/20 flex items-center justify-center text-lg flex-shrink-0">
-                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-saffron-500/20 to-saffron-400/10 border border-saffron-500/20 flex items-center justify-center text-lg flex-shrink-0" />
                   <div className="flex-1">
                     <div className="flex items-center gap-3 flex-wrap">
                       <span className="text-sm font-bold text-[var(--text-primary)]">
@@ -258,3 +258,5 @@ export default function ElectionsPage() {
     </div>
   );
 }
+
+

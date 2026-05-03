@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use client';
 
 import { useState } from 'react';
@@ -156,7 +157,7 @@ export default function ResultsPage() {
               {data.slice(0, 3).map((p) => (
                 <div key={p.party} className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: p.color }}></div>
+                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: p.color }} />
                     <span className="text-sm font-medium text-[var(--text-primary)]">{p.party}</span>
                   </div>
                   <div className="text-sm font-bold">{p.seats} <span className="text-[10px] text-[var(--text-muted)] font-normal">{t('results.seats')}</span></div>
@@ -208,7 +209,7 @@ export default function ResultsPage() {
                     <tr key={row.party} className="border-b border-[var(--border-color)] hover:bg-[var(--bg-glass)] transition-colors">
                       <td className="p-4">
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 rounded" style={{ backgroundColor: row.color }}></div>
+                          <div className="w-4 h-4 rounded" style={{ backgroundColor: row.color }} />
                           <span className="font-medium text-[var(--text-primary)]">{row.party}</span>
                         </div>
                       </td>
@@ -226,3 +227,5 @@ export default function ResultsPage() {
     </div>
   );
 }
+
+

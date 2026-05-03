@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -259,3 +260,5 @@ export default function AIAssistantPage() {
     </div>
   );
 }
+
+

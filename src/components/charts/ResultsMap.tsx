@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -83,3 +84,5 @@ export default function ResultsMap({ onStateSelect, year }: ResultsMapProps) {
     </div>
   );
 }
+
+

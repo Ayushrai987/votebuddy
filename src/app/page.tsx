@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 "use client";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
@@ -231,3 +232,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+

@@ -52,26 +52,26 @@ export default function VoterServicesPage() {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-10">
         <a href="https://voters.eci.gov.in" target="_blank" rel="noopener noreferrer"
           className="glass-card-hover p-4 text-center">
-          <span className="text-2xl block mb-2"></span>
+          <span className="text-2xl block mb-2" />
           <span className="text-xs font-bold text-[var(--text-primary)]">{t('voter.nvspPortal')}</span>
         </a>
         <a href="https://voterportal.eci.gov.in" target="_blank" rel="noopener noreferrer"
           className="glass-card-hover p-4 text-center">
-          <span className="text-2xl block mb-2"></span>
+          <span className="text-2xl block mb-2" />
           <span className="text-xs font-bold text-[var(--text-primary)]">{t('voter.checkVoterList')}</span>
         </a>
         <a href="tel:1950" className="glass-card-hover p-4 text-center">
-          <span className="text-2xl block mb-2"></span>
+          <span className="text-2xl block mb-2" />
           <span className="text-xs font-bold text-[var(--text-primary)]">{t('voter.call1950')}</span>
         </a>
         <a href="https://voters.eci.gov.in/download-epic" target="_blank" rel="noopener noreferrer"
           className="glass-card-hover p-4 text-center">
-          <span className="text-2xl block mb-2"></span>
+          <span className="text-2xl block mb-2" />
           <span className="text-xs font-bold text-[var(--text-primary)]">{t('voter.downloadEpic')}</span>
         </a>
         <a href="https://voters.eci.gov.in/track-application" target="_blank" rel="noopener noreferrer"
           className="glass-card-hover p-4 text-center">
-          <span className="text-2xl block mb-2"></span>
+          <span className="text-2xl block mb-2" />
           <span className="text-xs font-bold text-[var(--text-primary)]">{t('voter.trackStatus')}</span>
         </a>
       </div>
@@ -90,7 +90,7 @@ export default function VoterServicesPage() {
                     : "text-[var(--text-secondary)] hover:bg-[var(--bg-glass)] border border-transparent"
                 }`}
               >
-                <span className="text-lg"></span>
+                <span className="text-lg" />
                 {s.label}
               </button>
             ))}
@@ -103,7 +103,7 @@ export default function VoterServicesPage() {
           {activeSection === "form6" && (
             <div className="glass-card p-6 sm:p-8 animate-fade-up">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl"></span>
+                <span className="text-3xl" />
                 <div>
                   <h2 className="text-xl font-extrabold text-[var(--text-primary)]">{language === 'en' ? reg.form6.title : reg.form6.titleHi}</h2>
                 </div>
@@ -134,7 +134,7 @@ export default function VoterServicesPage() {
               <ul className="space-y-2 mb-6">
                 {reg.form6.documents.map((doc, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-green-500 flex-shrink-0"></span>
+                    <span className="text-green-500 flex-shrink-0" />
                     {doc}
                   </li>
                 ))}
@@ -156,7 +156,7 @@ export default function VoterServicesPage() {
           {activeSection === "form7" && (
             <div className="glass-card p-6 sm:p-8 animate-fade-up">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl"></span>
+                <span className="text-3xl" />
                 <div>
                   <h2 className="text-xl font-extrabold text-[var(--text-primary)]">{language === 'en' ? reg.form7.title : reg.form7.titleHi}</h2>
                 </div>
@@ -164,7 +164,7 @@ export default function VoterServicesPage() {
               <ul className="space-y-3">
                 {reg.form7.details.map((d, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-saffron-500 flex-shrink-0"></span>
+                    <span className="text-saffron-500 flex-shrink-0" />
                     {d}
                   </li>
                 ))}
@@ -176,7 +176,7 @@ export default function VoterServicesPage() {
           {activeSection === "form8" && (
             <div className="glass-card p-6 sm:p-8 animate-fade-up">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl"></span>
+                <span className="text-3xl" />
                 <div>
                   <h2 className="text-xl font-extrabold text-[var(--text-primary)]">{language === 'en' ? reg.form8.title : reg.form8.titleHi}</h2>
                 </div>
@@ -184,7 +184,7 @@ export default function VoterServicesPage() {
               <ul className="space-y-3">
                 {reg.form8.details.map((d, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-saffron-500 flex-shrink-0"></span>
+                    <span className="text-saffron-500 flex-shrink-0" />
                     {d}
                   </li>
                 ))}
@@ -196,7 +196,7 @@ export default function VoterServicesPage() {
           {activeSection === "epic" && (
             <div className="glass-card p-6 sm:p-8 animate-fade-up">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl"></span>
+                <span className="text-3xl" />
                 <div>
                   <h2 className="text-xl font-extrabold text-[var(--text-primary)]">{language === 'en' ? reg.epic.title : reg.epic.titleHi}</h2>
                 </div>
@@ -204,7 +204,7 @@ export default function VoterServicesPage() {
               <ul className="space-y-3 mb-6">
                 {reg.epic.details.map((d, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-saffron-500 flex-shrink-0"></span>
+                    <span className="text-saffron-500 flex-shrink-0" />
                     {d}
                   </li>
                 ))}
@@ -214,7 +214,7 @@ export default function VoterServicesPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {reg.epic.alternativeIds.map((id, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm text-[var(--text-secondary)] p-2 rounded-lg bg-[var(--bg-glass)] border border-[var(--border-color)]">
-                    <span className="text-green-500"></span>
+                    <span className="text-green-500" />
                     {id}
                   </div>
                 ))}
@@ -226,7 +226,7 @@ export default function VoterServicesPage() {
           {activeSection === "helpline" && (
             <div className="glass-card p-6 sm:p-8 animate-fade-up">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl"></span>
+                <span className="text-3xl" />
                 <div>
                   <h2 className="text-xl font-extrabold text-[var(--text-primary)]">{language === 'en' ? reg.helpline.title : reg.helpline.titleHi}</h2>
                 </div>
@@ -242,7 +242,7 @@ export default function VoterServicesPage() {
               <ul className="space-y-3">
                 {reg.helpline.details.map((d, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-saffron-500 flex-shrink-0"></span>
+                    <span className="text-saffron-500 flex-shrink-0" />
                     {d}
                   </li>
                 ))}
@@ -254,7 +254,7 @@ export default function VoterServicesPage() {
           {activeSection === "eligibility" && (
             <div className="glass-card p-6 sm:p-8 animate-fade-up">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl"></span>
+                <span className="text-3xl" />
                 <div>
                   <h2 className="text-xl font-extrabold text-[var(--text-primary)]">{t('voter.ageChecker')}</h2>
                   <p className="text-sm text-[var(--text-secondary)]">{t('voter.ageCheckerDesc')}</p>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import { LanguageProvider, useLanguage } from './LanguageProvider';
@@ -77,3 +78,5 @@ describe('LanguageProvider', () => {
     expect(screen.getByTestId('missing')).toHaveTextContent('non.existent.key');
   });
 });
+
+

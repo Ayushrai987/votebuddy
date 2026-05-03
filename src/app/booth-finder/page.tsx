@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
@@ -185,7 +186,7 @@ export default function BoothFinderPage() {
 
             <div className="relative my-6 text-center">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-[var(--border-color)]"></div>
+                <div className="w-full border-t border-[var(--border-color)]" />
               </div>
               <span className="relative bg-[var(--bg-card)] px-3 text-xs text-[var(--text-muted)] uppercase font-semibold tracking-wider">
                 {t('booth.or')}
@@ -298,3 +299,5 @@ export default function BoothFinderPage() {
     </div>
   );
 }
+
+

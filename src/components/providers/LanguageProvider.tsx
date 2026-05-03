@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 "use client";
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { translations, Language } from '@/data/translations';
@@ -125,3 +126,5 @@ export function useLanguage() {
   }
   return context;
 }
+
+

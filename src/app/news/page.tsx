@@ -182,7 +182,7 @@ export default function NewsPage() {
 
         {filteredNews.length === 0 && (
           <div className="text-center py-16 glass-card rounded-2xl">
-            <span className="text-4xl mb-4 block opacity-50"></span>
+            <span className="text-4xl mb-4 block opacity-50" />
             <p className="text-[var(--text-secondary)]">{t('news.noNews')}</p>
           </div>
         )}

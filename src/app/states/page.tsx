@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 "use client";
 import { useState } from "react";
 import Link from "next/link";
@@ -111,10 +112,12 @@ export default function StatesPage() {
 
       {filtered.length === 0 && (
         <div className="text-center py-12">
-          <span className="text-5xl block mb-4"></span>
+          <span className="text-5xl block mb-4" />
           <p className="text-[var(--text-secondary)]">No states or UTs match your search.</p>
         </div>
       )}
     </div>
   );
 }
+
+

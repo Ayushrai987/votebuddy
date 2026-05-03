@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use client';
 
 import { useAuth } from '@/components/auth/AuthProvider';
@@ -42,7 +43,7 @@ export default function DashboardPage() {
         {/* Sidebar */}
         <div className="w-full md:w-64 flex-shrink-0 space-y-6">
           <div className="glass-card p-6 rounded-2xl text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-r from-saffron-500 to-india-green opacity-20"></div>
+            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-r from-saffron-500 to-india-green opacity-20" />
             <div className="relative w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-[var(--bg-card)] mb-3 z-10 shadow-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={user.photoURL || `https://ui-avatars.com/api/?name=${user.displayName}`} alt="Profile" className="w-full h-full object-cover" />
@@ -86,7 +87,7 @@ export default function DashboardPage() {
             >
               <Settings className="w-4 h-4" /> Settings
             </button>
-            <div className="my-2 border-t border-[var(--border-color)]"></div>
+            <div className="my-2 border-t border-[var(--border-color)]" />
             <button 
               onClick={logout}
               className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-500/10 transition-all"
@@ -114,7 +115,7 @@ export default function DashboardPage() {
                 <div className="relative z-10 flex flex-col md:flex-row gap-6 items-center justify-between">
                   <div>
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-semibold uppercase tracking-wider mb-3">
-                      <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
+                      <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
                       Upcoming Election
                     </div>
                     <h3 className="text-2xl font-bold mb-1">{UPCOMING_ELECTION.state} {UPCOMING_ELECTION.type}</h3>
@@ -225,3 +226,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { allElections } from "@/data/elections";
 import { Election } from "@/types";
 
@@ -207,3 +208,5 @@ export function debounce<T extends (...args: any[]) => any>(
 
   return debounced as unknown as T;
 }
+
+

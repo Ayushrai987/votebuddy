@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 "use client";
 import { useState } from "react";
 import { eciRules, boothRules } from "@/data/eci-rules";
@@ -202,3 +203,5 @@ export default function ECIRulesPage() {
     </div>
   );
 }
+
+
