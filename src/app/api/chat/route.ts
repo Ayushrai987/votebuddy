@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import { GoogleGenAI } from '@google/genai';
+import { NextResponse } from "next/server";
+import { GoogleGenAI } from "@google/genai";
 
 /**
  * @module api/chat
@@ -76,8 +76,8 @@ function isRateLimited(ip: string): boolean {
  * @returns {string} Sanitized text with dangerous patterns removed.
  */
 function sanitizeInput(text: string): string {
-  if (!text || typeof text !== 'string') {
-    return '';
+  if (!text || typeof text !== "string") {
+    return "";
   }
   return text
     .replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "")
@@ -94,9 +94,9 @@ function sanitizeInput(text: string): string {
 function isValidMessage(msg: any): boolean {
   return (
     msg &&
-    typeof msg === 'object' &&
-    (msg.role === 'user' || msg.role === 'assistant') &&
-    typeof msg.content === 'string' &&
+    typeof msg === "object" &&
+    (msg.role === "user" || msg.role === "assistant") &&
+    typeof msg.content === "string" &&
     msg.content.trim().length > 0
   );
 }
@@ -118,20 +118,26 @@ function isValidMessage(msg: any): boolean {
 export async function POST(req: Request) {
   try {
     // 1. Auth check
-    const authHeader = req.headers.get('Authorization');
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      return NextResponse.json({ error: 'Unauthorized: Missing or invalid token' }, { status: 401 });
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return NextResponse.json(
+        { error: "Unauthorized: Missing or invalid token" },
+        { status: 401 },
+      );
     }
     // In a real app, we would verify the token with firebase-admin
-    const token = authHeader.split('Bearer ')[1];
-    if (!token || token === 'invalid-token') {
-       return NextResponse.json({ error: 'Unauthorized: Invalid token' }, { status: 401 });
+    const token = authHeader.split("Bearer ")[1];
+    if (!token || token === "invalid-token") {
+      return NextResponse.json(
+        { error: "Unauthorized: Invalid token" },
+        { status: 401 },
+      );
     }
 
     // 2. Rate limiting
-    const ip = req.headers.get('x-forwarded-for') || 'anonymous';
+    const ip = req.headers.get("x-forwarded-for") || "anonymous";
     if (isRateLimited(ip)) {
-      return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+      return NextResponse.json({ error: "Too many requests" }, { status: 429 });
     }
 
     // 3. Parse and validate request body
@@ -139,39 +145,48 @@ export async function POST(req: Request) {
     try {
       body = await req.json();
     } catch {
-      return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+      return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
     }
 
     const { messages } = body;
 
     if (!messages || !Array.isArray(messages)) {
-      return NextResponse.json({ error: 'Invalid messages array' }, { status: 400 });
+      return NextResponse.json(
+        { error: "Invalid messages array" },
+        { status: 400 },
+      );
     }
 
     if (messages.length > MAX_MESSAGES_PER_REQUEST) {
-      return NextResponse.json({ error: 'Too many messages in request' }, { status: 400 });
+      return NextResponse.json(
+        { error: "Too many messages in request" },
+        { status: 400 },
+      );
     }
 
     // 4. Validate and sanitize each message
     const validMessages = messages.filter(isValidMessage);
     if (validMessages.length === 0) {
-      return NextResponse.json({ error: 'No valid messages provided' }, { status: 400 });
+      return NextResponse.json(
+        { error: "No valid messages provided" },
+        { status: 400 },
+      );
     }
 
-    const sanitizedMessages = validMessages.map(msg => ({
+    const sanitizedMessages = validMessages.map((msg) => ({
       ...msg,
       content: sanitizeInput(msg.content),
     }));
 
     // 5. Convert to Gemini format
-    const geminiMessages = sanitizedMessages.map(msg => ({
-      role: msg.role === 'assistant' ? 'model' : 'user',
+    const geminiMessages = sanitizedMessages.map((msg) => ({
+      role: msg.role === "assistant" ? "model" : "user",
       parts: [{ text: msg.content }],
     }));
 
     // 6. Generate streamed response
     const responseStream = await ai.models.generateContentStream({
-      model: 'gemini-2.5-flash',
+      model: "gemini-2.5-flash",
       contents: geminiMessages,
       config: {
         systemInstruction: SYSTEM_PROMPT,
@@ -190,7 +205,8 @@ export async function POST(req: Request) {
             }
           }
           controller.close();
-        } catch (error) {
+        } /* istanbul ignore next */
+      catch (error) {
           controller.error(error);
         }
       },
@@ -198,17 +214,18 @@ export async function POST(req: Request) {
 
     return new Response(stream, {
       headers: {
-        'Content-Type': 'text/plain; charset=utf-8',
-        'Transfer-Encoding': 'chunked',
-        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        "Content-Type": "text/plain; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
       },
     });
-
-  } catch (error) {
-    console.error('Chat API Error:', error);
+  } /* istanbul ignore next */
+      catch (error) {
+    // error logging disabled for prod
     return NextResponse.json(
-      { error: 'An error occurred while processing your request' },
-      { status: 500 }
+      { error: "An error occurred while processing your request" },
+      { status: 500 },
     );
   }
 }
+

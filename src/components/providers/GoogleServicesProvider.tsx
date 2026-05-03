@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, ReactNode } from 'react';
-import { initGoogleServices } from '@/lib/firebase';
-import { initWebVitalsMonitoring } from '@/lib/performance';
-import { useAnalytics } from '@/lib/useAnalytics';
+import { useEffect, ReactNode } from "react";
+import { initGoogleServices } from "@/lib/firebase";
+import { initWebVitalsMonitoring } from "@/lib/performance";
+import { useAnalytics } from "@/lib/useAnalytics";
 
 /**
  * Provider component that initializes all Google Cloud services on mount.

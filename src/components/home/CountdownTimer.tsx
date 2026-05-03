@@ -1,16 +1,21 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 /**
  * Animated countdown timer for upcoming election dates.
- * 
+ *
  * @param {string} targetDate - ISO date string of the target event.
  * @returns {JSX.Element} The rendered countdown timer.
  */
 export function CountdownTimer({ targetDate }: { targetDate: string }) {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
   const { language } = useLanguage();
 
   useEffect(() => {
@@ -34,10 +39,10 @@ export function CountdownTimer({ targetDate }: { targetDate: string }) {
   }, [targetDate]);
 
   const units = [
-    { label: language === 'en' ? "Days" : "दिन", value: timeLeft.days },
-    { label: language === 'en' ? "Hours" : "घंटे", value: timeLeft.hours },
-    { label: language === 'en' ? "Mins" : "मिनट", value: timeLeft.minutes },
-    { label: language === 'en' ? "Secs" : "सेकंड", value: timeLeft.seconds },
+    { label: language === "en" ? "Days" : "दिन", value: timeLeft.days },
+    { label: language === "en" ? "Hours" : "घंटे", value: timeLeft.hours },
+    { label: language === "en" ? "Mins" : "मिनट", value: timeLeft.minutes },
+    { label: language === "en" ? "Secs" : "सेकंड", value: timeLeft.seconds },
   ];
 
   return (
@@ -53,7 +58,9 @@ export function CountdownTimer({ targetDate }: { targetDate: string }) {
             </div>
           </div>
           {i < units.length - 1 && (
-            <span className="text-saffron-500 text-xl font-bold opacity-50">:</span>
+            <span className="text-saffron-500 text-xl font-bold opacity-50">
+              :
+            </span>
           )}
         </div>
       ))}

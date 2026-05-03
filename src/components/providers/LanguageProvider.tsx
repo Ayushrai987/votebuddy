@@ -1,10 +1,16 @@
 /* eslint-disable no-unused-vars */
 "use client";
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { translations, Language } from '@/data/translations';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
+import { translations, Language } from "@/data/translations";
 
 /** LocalStorage key for persisting language preference */
-const LANGUAGE_STORAGE_KEY = 'language';
+const LANGUAGE_STORAGE_KEY = "language";
 
 /** Shape of the language context value */
 type LanguageContextType = {
@@ -16,7 +22,9 @@ type LanguageContextType = {
   t: (path: string) => any;
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined,
+);
 
 /**
  * Language provider component for bilingual (English/Hindi) support.
@@ -34,12 +42,12 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
  * ```
  */
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>("en");
 
   useEffect(() => {
     try {
       const savedLang = localStorage.getItem(LANGUAGE_STORAGE_KEY) as Language;
-      if (savedLang === 'en' || savedLang === 'hi') {
+      if (savedLang === "en" || savedLang === "hi") {
         setLanguageState(savedLang);
       }
     } catch {
@@ -77,28 +85,31 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
    * t('missing.key');    // "missing.key" (fallback)
    * ```
    */
-  const t = useCallback((path: string) => {
-    const keys = path.split('.');
-    let result: any = translations[language];
-    
-    for (const key of keys) {
-      if (result && result[key]) {
-        result = result[key];
-      } else {
-        // Fallback to English if key missing in current language
-        let fallback: any = translations['en'];
-        for (const fKey of keys) {
-          if (fallback && fallback[fKey]) {
-            fallback = fallback[fKey];
-          } else {
-            return path; // Return path if not found anywhere
+  const t = useCallback(
+    (path: string) => {
+      const keys = path.split(".");
+      let result: any = translations[language];
+
+      for (const key of keys) {
+        if (result && result[key]) {
+          result = result[key];
+        } else {
+          // Fallback to English if key missing in current language
+          let fallback: any = translations["en"];
+          for (const fKey of keys) {
+            if (fallback && fallback[fKey]) {
+              fallback = fallback[fKey];
+            } else {
+              return path; // Return path if not found anywhere
+            }
           }
+          return fallback;
         }
-        return fallback;
       }
-    }
-    return result;
-  }, [language]);
+      return result;
+    },
+    [language],
+  );
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
@@ -122,9 +133,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    throw new Error("useLanguage must be used within a LanguageProvider");
   }
   return context;
 }
-
-

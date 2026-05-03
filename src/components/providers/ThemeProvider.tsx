@@ -1,5 +1,12 @@
 "use client";
-import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+  ReactNode,
+} from "react";
 
 /** Supported theme modes */
 type Theme = "dark" | "light";

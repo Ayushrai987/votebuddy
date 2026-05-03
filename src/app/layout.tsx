@@ -109,7 +109,10 @@ export default function RootLayout({
             <ThemeProvider>
               <GoogleServicesProvider>
                 {/* Background decoration */}
-                <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+                <div
+                  className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
+                  aria-hidden="true"
+                >
                   <div className="bg-orb w-[500px] h-[500px] bg-saffron-500 -top-[10%] -left-[10%] opacity-[0.08] absolute animate-float" />
                   <div className="bg-orb w-[400px] h-[400px] bg-india-green -bottom-[10%] -right-[10%] opacity-[0.06] absolute animate-float-delayed" />
                   <div className="bg-orb w-[300px] h-[300px] bg-india-ashoka top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.04] absolute animate-float-slow" />
@@ -126,7 +129,14 @@ export default function RootLayout({
                 {/* App content */}
                 <div className="relative z-10 flex flex-col min-h-screen">
                   <Header />
-                  <main id="main-content" role="main" tabIndex={-1} className="flex-1 outline-none">{children}</main>
+                  <main
+                    id="main-content"
+                    role="main"
+                    tabIndex={-1}
+                    className="flex-1 outline-none"
+                  >
+                    {children}
+                  </main>
                   <Footer />
                   <MobileNav />
                 </div>

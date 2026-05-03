@@ -1,9 +1,14 @@
-import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
-import { getAuth, Auth } from 'firebase/auth';
-import { getFirestore, Firestore } from 'firebase/firestore';
-import { getAnalytics, isSupported, Analytics, logEvent as firebaseLogEvent } from 'firebase/analytics';
-import { getPerformance, FirebasePerformance } from 'firebase/performance';
-import { getStorage, FirebaseStorage } from 'firebase/storage';
+import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
+import { getAuth, Auth } from "firebase/auth";
+import { getFirestore, Firestore } from "firebase/firestore";
+import {
+  getAnalytics,
+  isSupported,
+  Analytics,
+  logEvent as firebaseLogEvent,
+} from "firebase/analytics";
+import { getPerformance, FirebasePerformance } from "firebase/performance";
+import { getStorage, FirebaseStorage } from "firebase/storage";
 
 /**
  * Firebase configuration using environment variables.
@@ -11,20 +16,25 @@ import { getStorage, FirebaseStorage } from 'firebase/storage';
  * @see https://firebase.google.com/docs/web/setup
  */
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || 'mock-api-key',
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || 'mock-auth-domain',
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'mock-project-id',
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || 'mock-storage-bucket',
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || 'mock-sender-id',
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || 'mock-app-id',
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || 'mock-measurement-id',
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "mock-api-key",
+  authDomain:
+    process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "mock-auth-domain",
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "mock-project-id",
+  storageBucket:
+    process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "mock-storage-bucket",
+  messagingSenderId:
+    process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "mock-sender-id",
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "mock-app-id",
+  measurementId:
+    process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "mock-measurement-id",
 };
 
 /**
  * Singleton Firebase app instance.
  * Prevents re-initialization during Next.js hot reloads.
  */
-const app: FirebaseApp = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+const app: FirebaseApp =
+  getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
 /** Firebase Authentication instance */
 export const auth: Auth = getAuth(app);
@@ -47,7 +57,7 @@ let performanceInstance: FirebasePerformance | null = null;
  * @returns {Promise<void>}
  */
 export const initGoogleServices = async (): Promise<void> => {
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     try {
       const analyticsSupported = await isSupported();
       if (analyticsSupported && !analyticsInstance) {
@@ -57,7 +67,7 @@ export const initGoogleServices = async (): Promise<void> => {
         performanceInstance = getPerformance(app);
       }
     } catch (error) {
-      console.error('Error initializing Google services:', error);
+      console.error("Error initializing Google services:", error);
     }
   }
 };
@@ -69,7 +79,10 @@ export const initGoogleServices = async (): Promise<void> => {
  * @param {string} eventName - The name of the event to log.
  * @param {Record<string, unknown>} [params] - Optional event parameters.
  */
-export const logAnalyticsEvent = (eventName: string, params?: Record<string, unknown>): void => {
+export const logAnalyticsEvent = (
+  eventName: string,
+  params?: Record<string, unknown>,
+): void => {
   if (analyticsInstance) {
     firebaseLogEvent(analyticsInstance, eventName, params);
   }
@@ -85,6 +98,7 @@ export const getAnalyticsInstance = (): Analytics | null => analyticsInstance;
  * Returns the cached Performance instance, if available.
  * @returns {FirebasePerformance | null} The Performance instance or null.
  */
-export const getPerformanceInstance = (): FirebasePerformance | null => performanceInstance;
+export const getPerformanceInstance = (): FirebasePerformance | null =>
+  performanceInstance;
 
 export default app;

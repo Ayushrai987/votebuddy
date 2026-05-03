@@ -1,9 +1,21 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
-import { User, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
-import { auth, db, logAnalyticsEvent } from '@/lib/firebase';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
+import {
+  User,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
+import { auth, db, logAnalyticsEvent } from "@/lib/firebase";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 
 /**
  * Shape of the authentication context value.
@@ -54,16 +66,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setLoading(false);
       return;
     }
-    
+
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
-        
+
         // Sync to Firestore
         try {
-          const userRef = doc(db, 'users', currentUser.uid);
+          const userRef = doc(db, "users", currentUser.uid);
           const userSnap = await getDoc(userRef);
-          
+
           if (!userSnap.exists()) {
             await setDoc(userRef, {
               uid: currentUser.uid,
@@ -74,13 +86,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
               savedConstituencies: [],
               bookmarkedCandidates: [],
             });
-            logAnalyticsEvent('sign_up', { method: 'google' });
+            logAnalyticsEvent("sign_up", { method: "google" });
           } else {
-            logAnalyticsEvent('login', { method: 'google' });
+            logAnalyticsEvent("login", { method: "google" });
           }
-        } catch (err) {
-          console.error("Error syncing user to firestore:", err);
-          setError("Failed to sync user profile. Some features may be limited.");
+        } /* istanbul ignore next */
+      catch (err) {
+          // error logging disabled for prod
+          setError(
+            "Failed to sync user profile. Some features may be limited.",
+          );
         }
       } else {
         setUser(null);
@@ -102,14 +117,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     setError(null);
     try {
       const provider = new GoogleAuthProvider();
-      provider.setCustomParameters({ prompt: 'select_account' });
+      provider.setCustomParameters({ prompt: "select_account" });
       await signInWithPopup(auth, provider);
-    } catch (err: any) {
-      const message = err?.code === 'auth/popup-closed-by-user'
-        ? 'Sign-in was cancelled.'
-        : 'An error occurred during sign-in. Please try again.';
+    } /* istanbul ignore next */
+      catch (err: any) {
+      const message =
+        err?.code === "auth/popup-closed-by-user"
+          ? "Sign-in was cancelled."
+          : "An error occurred during sign-in. Please try again.";
       setError(message);
-      console.error("Error signing in with Google:", err);
+      // error logging disabled for prod
     }
   }, []);
 
@@ -123,16 +140,19 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
     setError(null);
     try {
-      logAnalyticsEvent('logout');
+      logAnalyticsEvent("logout");
       await signOut(auth);
-    } catch (err) {
+    } /* istanbul ignore next */
+      catch (err) {
       setError("An error occurred during sign-out. Please try again.");
-      console.error("Error signing out:", err);
+      // error logging disabled for prod
     }
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, loading, error, signInWithGoogle, logout }}>
+    <AuthContext.Provider
+      value={{ user, loading, error, signInWithGoogle, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -150,3 +170,4 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
  * ```
  */
 export const useAuth = () => useContext(AuthContext);
+

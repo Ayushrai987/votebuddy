@@ -1,17 +1,17 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { BoothCard } from './BoothCard';
-import { LanguageProvider } from '../providers/LanguageProvider';
-import { Booth } from '@/types';
+import React from "react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { BoothCard } from "./BoothCard";
+import { LanguageProvider } from "../providers/LanguageProvider";
+import { Booth } from "@/types";
 
 const mockBooth: Booth = {
-  id: 'B1',
-  name: 'Test Booth',
+  id: "B1",
+  name: "Test Booth",
   number: 123,
-  address: '123 Test St',
-  constituency: 'Test Const',
-  district: 'Test Dist',
-  state: 'Test State',
+  address: "123 Test St",
+  constituency: "Test Const",
+  district: "Test Dist",
+  state: "Test State",
   latitude: 0,
   longitude: 0,
   accessibility: {
@@ -19,86 +19,88 @@ const mockBooth: Booth = {
     wheelchair: true,
     drinkingWater: true,
     shade: false,
-    toilets: true
-  }
+    toilets: true,
+  },
 };
 
-const renderBoothCard = (props: Partial<React.ComponentProps<typeof BoothCard>> = {}) => {
+const renderBoothCard = (
+  props: Partial<React.ComponentProps<typeof BoothCard>> = {},
+) => {
   return render(
     <LanguageProvider>
       <BoothCard booth={mockBooth} {...props} />
-    </LanguageProvider>
+    </LanguageProvider>,
   );
 };
 
-describe('BoothCard', () => {
-  it('renders booth details correctly', () => {
+describe("BoothCard", () => {
+  it("renders booth details correctly", () => {
     renderBoothCard();
-    
-    expect(screen.getByText('Test Booth')).toBeInTheDocument();
-    expect(screen.getByTestId('booth-number')).toHaveTextContent('Booth 123');
+
+    expect(screen.getByText("Test Booth")).toBeInTheDocument();
+    expect(screen.getByTestId("booth-number")).toHaveTextContent("Booth 123");
     expect(screen.getByText(/123 Test St/i)).toBeInTheDocument();
   });
 
-  it('renders all facility badges correctly', () => {
+  it("renders all facility badges correctly", () => {
     renderBoothCard();
-    
-    const badges = screen.getByTestId('accessibility-badges');
-    expect(badges).toHaveTextContent('Ramp');
-    expect(badges).toHaveTextContent('Water');
-    expect(badges).toHaveTextContent('Toilet');
+
+    const badges = screen.getByTestId("accessibility-badges");
+    expect(badges).toHaveTextContent("Ramp");
+    expect(badges).toHaveTextContent("Water");
+    expect(badges).toHaveTextContent("Toilet");
     // Shade is false
-    expect(badges).not.toHaveTextContent('Shade');
+    expect(badges).not.toHaveTextContent("Shade");
   });
 
-  it('calls onClick when clicked', () => {
+  it("calls onClick when clicked", () => {
     const handleClick = jest.fn();
     renderBoothCard({ onClick: handleClick });
-    
-    fireEvent.click(screen.getByTestId('booth-card'));
+
+    fireEvent.click(screen.getByTestId("booth-card"));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('supports keyboard activation with Enter key', () => {
+  it("supports keyboard activation with Enter key", () => {
     const handleClick = jest.fn();
     renderBoothCard({ onClick: handleClick });
-    
-    fireEvent.keyDown(screen.getByTestId('booth-card'), { key: 'Enter' });
+
+    fireEvent.keyDown(screen.getByTestId("booth-card"), { key: "Enter" });
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('supports keyboard activation with Space key', () => {
+  it("supports keyboard activation with Space key", () => {
     const handleClick = jest.fn();
     renderBoothCard({ onClick: handleClick });
-    
-    fireEvent.keyDown(screen.getByTestId('booth-card'), { key: ' ' });
+
+    fireEvent.keyDown(screen.getByTestId("booth-card"), { key: " " });
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('has proper ARIA attributes', () => {
+  it("has proper ARIA attributes", () => {
     renderBoothCard({ isSelected: true });
-    
-    const card = screen.getByTestId('booth-card');
-    expect(card).toHaveAttribute('role', 'button');
-    expect(card).toHaveAttribute('aria-pressed', 'true');
-    expect(card).toHaveAttribute('tabindex', '0');
+
+    const card = screen.getByTestId("booth-card");
+    expect(card).toHaveAttribute("role", "button");
+    expect(card).toHaveAttribute("aria-pressed", "true");
+    expect(card).toHaveAttribute("tabindex", "0");
   });
 
-  it('shows correct styles when selected', () => {
+  it("shows correct styles when selected", () => {
     renderBoothCard({ isSelected: true });
-    
-    const card = screen.getByTestId('booth-card');
-    expect(card.className).toContain('border-saffron-500');
+
+    const card = screen.getByTestId("booth-card");
+    expect(card.className).toContain("border-saffron-500");
   });
 
-  it('has accessibility badges list with proper role', () => {
+  it("has accessibility badges list with proper role", () => {
     renderBoothCard();
-    
-    const badgeList = screen.getByTestId('accessibility-badges');
-    expect(badgeList).toHaveAttribute('role', 'list');
+
+    const badgeList = screen.getByTestId("accessibility-badges");
+    expect(badgeList).toHaveAttribute("role", "list");
   });
 
-  it('renders booth with no accessibility features', () => {
+  it("renders booth with no accessibility features", () => {
     const minimalBooth: Booth = {
       ...mockBooth,
       accessibility: {
@@ -109,14 +111,14 @@ describe('BoothCard', () => {
         toilets: false,
       },
     };
-    
+
     render(
       <LanguageProvider>
         <BoothCard booth={minimalBooth} />
-      </LanguageProvider>
+      </LanguageProvider>,
     );
-    
-    const badges = screen.getByTestId('accessibility-badges');
+
+    const badges = screen.getByTestId("accessibility-badges");
     expect(badges.children.length).toBe(0);
   });
 });

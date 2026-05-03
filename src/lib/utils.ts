@@ -41,7 +41,9 @@ interface ElectionStatusResult {
  * // { label: "Upcoming", color: "orange", status: "upcoming" }
  * ```
  */
-export const getElectionStatus = (electionDateStr: string | undefined): ElectionStatusResult => {
+export const getElectionStatus = (
+  electionDateStr: string | undefined,
+): ElectionStatusResult => {
   if (!electionDateStr) {
     return { label: "Upcoming", color: "orange", status: "upcoming" };
   }
@@ -56,7 +58,11 @@ export const getElectionStatus = (electionDateStr: string | undefined): Election
 
   // Set time to 00:00:00 for accurate day comparison
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const eDate = new Date(electionDate.getFullYear(), electionDate.getMonth(), electionDate.getDate());
+  const eDate = new Date(
+    electionDate.getFullYear(),
+    electionDate.getMonth(),
+    electionDate.getDate(),
+  );
 
   const diffTime = eDate.getTime() - today.getTime();
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -88,8 +94,12 @@ export const getElectionStatus = (electionDateStr: string | undefined): Election
 export const getNextElection = (): Election | undefined => {
   const now = new Date();
   return allElections
-    .filter(e => e.electionDate && new Date(e.electionDate) > now)
-    .sort((a, b) => new Date(a.electionDate!).getTime() - new Date(b.electionDate!).getTime())[0];
+    .filter((e) => e.electionDate && new Date(e.electionDate) > now)
+    .sort(
+      (a, b) =>
+        new Date(a.electionDate!).getTime() -
+        new Date(b.electionDate!).getTime(),
+    )[0];
 };
 
 /**
@@ -126,13 +136,13 @@ export const formatVoteCount = (count: number): string => {
     throw new Error("Vote count cannot be negative");
   }
   if (count >= 10000000) {
-    return (count / 10000000).toFixed(1).replace(/\.0$/, '') + " Cr+";
+    return (count / 10000000).toFixed(1).replace(/\.0$/, "") + " Cr+";
   }
   if (count >= 100000) {
-    return (count / 100000).toFixed(1).replace(/\.0$/, '') + " L+";
+    return (count / 100000).toFixed(1).replace(/\.0$/, "") + " L+";
   }
   if (count >= 1000) {
-    return (count / 1000).toFixed(1).replace(/\.0$/, '') + " K+";
+    return (count / 1000).toFixed(1).replace(/\.0$/, "") + " K+";
   }
   return count.toString();
 };
@@ -152,7 +162,7 @@ export const formatVoteCount = (count: number): string => {
  * ```
  */
 export const isValidEPIC = (epic: string): boolean => {
-  if (!epic || typeof epic !== 'string') {
+  if (!epic || typeof epic !== "string") {
     return false;
   }
   const regex = /^[A-Z]{3}[0-9]{7}$/;
@@ -167,8 +177,8 @@ export const isValidEPIC = (epic: string): boolean => {
  * @returns {string} The sanitized string with script tags and HTML brackets removed.
  */
 export const sanitizeInput = (input: string): string => {
-  if (!input || typeof input !== 'string') {
-    return '';
+  if (!input || typeof input !== "string") {
+    return "";
   }
   return input
     .replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "")
@@ -192,7 +202,7 @@ export const sanitizeInput = (input: string): string => {
  */
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
-  waitMs: number
+  waitMs: number,
 ): T {
   let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
@@ -208,5 +218,3 @@ export function debounce<T extends (...args: any[]) => any>(
 
   return debounced as unknown as T;
 }
-
-

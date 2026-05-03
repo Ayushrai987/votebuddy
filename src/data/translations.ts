@@ -1,4 +1,4 @@
-export type Language = 'en' | 'hi';
+export type Language = "en" | "hi";
 
 export const translations = {
   en: {
@@ -13,7 +13,7 @@ export const translations = {
       aiChat: "AI Chat",
       dashboard: "Dashboard",
       admin: "Admin",
-      candidates: "Candidates"
+      candidates: "Candidates",
     },
     common: {
       signIn: "Sign In",
@@ -24,11 +24,12 @@ export const translations = {
       back: "Back",
       submit: "Submit",
       cancel: "Cancel",
-      explore: "Explore"
+      explore: "Explore",
     },
     home: {
       heroTitle: "Empowering Your Vote",
-      heroSubtitle: "Your comprehensive India Election Platform. Everything you need to participate in the world's largest democracy.",
+      heroSubtitle:
+        "Your comprehensive India Election Platform. Everything you need to participate in the world's largest democracy.",
       heroBadge: "India's Comprehensive Election Platform",
       heroHindiSubtitle: "भारतीय चुनाव के लिए आपका संपूर्ण मार्गदर्शक",
       getStarted: "Get Started",
@@ -37,7 +38,8 @@ export const translations = {
       featuredNews: "Featured News",
       nextElection: "Next Major Election",
       whatToDo: "What would you like to do?",
-      accessTools: "Access every tool an Indian voter, candidate, or election worker needs.",
+      accessTools:
+        "Access every tool an Indian voter, candidate, or election worker needs.",
       resultsSnapshot: "Lok Sabha 2024 Results Snapshot",
       viewFullResults: "View Full Results",
       majorityMark: "Majority mark",
@@ -51,11 +53,12 @@ export const translations = {
       seats: "seats",
       checkVoterStatus: "Check Voter Status",
       guideTo: "Your Guide to",
-      indianElections: "Indian Elections"
+      indianElections: "Indian Elections",
     },
     candidates: {
       title: "Candidate Directory",
-      subtitle: "Search and filter candidates by state, party, constituency, and more. Compare up to 3 side-by-side.",
+      subtitle:
+        "Search and filter candidates by state, party, constituency, and more. Compare up to 3 side-by-side.",
       searchPlaceholder: "Search by name or constituency...",
       allParties: "All Parties",
       allStates: "All States",
@@ -90,11 +93,12 @@ export const translations = {
       fullName: "Full Name",
       gender: "Gender",
       electionYear: "Election Year",
-      totalVotes: "Total Votes"
+      totalVotes: "Total Votes",
     },
     states: {
       title: "Explore States",
-      subtitle: "Detailed election statistics and information for every state and union territory in India.",
+      subtitle:
+        "Detailed election statistics and information for every state and union territory in India.",
       capital: "Capital",
       type: "Type",
       lsSeats: "Lok Sabha Seats",
@@ -112,11 +116,12 @@ export const translations = {
       divisions: "Constituencies by Division",
       phaseBreakdown: "Phase Breakdown",
       summary: "Election Summary",
-      backToAll: "Back to all states"
+      backToAll: "Back to all states",
     },
     booth: {
       title: "Find Your Polling Booth",
-      subtitle: "Search by your EPIC number or use your location to find the nearest polling station and get directions.",
+      subtitle:
+        "Search by your EPIC number or use your location to find the nearest polling station and get directions.",
       searchOptions: "Search Options",
       epicNumber: "EPIC Number (Voter ID)",
       searchPlaceholder: "e.g. ABC1234567",
@@ -129,16 +134,18 @@ export const translations = {
       blo: "BLO",
       getDirections: "Get Directions",
       mapFailed: "Map Failed to Load",
-      mapFailedDesc: "We could not load Google Maps. Please check your API key in the environment variables.",
+      mapFailedDesc:
+        "We could not load Google Maps. Please check your API key in the environment variables.",
       accessibility: {
         ramp: "Ramp",
         water: "Water",
-        toilet: "Toilet"
-      }
+        toilet: "Toilet",
+      },
     },
     elections: {
       hubTitle: "Elections Hub",
-      hubSubtitle: "Complete election data - phases, timelines, dates, and state coverage for every Indian election.",
+      hubSubtitle:
+        "Complete election data - phases, timelines, dates, and state coverage for every Indian election.",
       lokSabha: "Lok Sabha",
       vidhanSabha: "Vidhan Sabha",
       byElections: "By-Elections",
@@ -156,11 +163,12 @@ export const translations = {
       step: "Step",
       duration: "Duration",
       nextMajor: "is the next major state election.",
-      dataSoon: "Data coming soon. Check back for updates."
+      dataSoon: "Data coming soon. Check back for updates.",
     },
     rules: {
       libraryTitle: "ECI Guidelines Library",
-      librarySubtitle: "Complete Election Commission of India rules - Model Code of Conduct, campaign rules, EVM/VVPAT, expenditure limits, and more.",
+      librarySubtitle:
+        "Complete Election Commission of India rules - Model Code of Conduct, campaign rules, EVM/VVPAT, expenditure limits, and more.",
       searchPlaceholder: "Search rules (e.g., 'MCC', 'expenditure', 'NOTA')...",
       whatThisMeans: "What this means for you",
       keyPoints: "Key Points",
@@ -171,11 +179,12 @@ export const translations = {
       locationCriteria: "Location Criteria",
       keyOfficials: "Key Officials",
       voterLimit: "Voter Limit",
-      noResults: "No rules match your search. Try different keywords."
+      noResults: "No rules match your search. Try different keywords.",
     },
     voter: {
       hubTitle: "Voter Services Hub",
-      hubSubtitle: "Register to vote, correct your details, check eligibility, download voter ID, and access all voter services in one place.",
+      hubSubtitle:
+        "Register to vote, correct your details, check eligibility, download voter ID, and access all voter services in one place.",
       nvspPortal: "NVSP Portal",
       checkVoterList: "Check Voter List",
       call1950: "Call 1950",
@@ -191,7 +200,8 @@ export const translations = {
       stepByStep: "Step-by-Step Process",
       requiredDocs: "Required Documents",
       qualifyingDates: "Qualifying Dates",
-      qualifyingDesc: "You must be 18 years old on or before the qualifying date to register.",
+      qualifyingDesc:
+        "You must be 18 years old on or before the qualifying date to register.",
       alternativeIds: "12 Alternative IDs Accepted",
       callNow: "Call 1950 Now",
       callDesc: "Toll-free | Available 24/7 during elections",
@@ -199,12 +209,15 @@ export const translations = {
       ageCheckerDesc: "Are you 18 by the next qualifying date?",
       enterDob: "Enter your Date of Birth",
       checkButton: "Check Eligibility",
-      eligibleMsg: "You are eligible! You will be {age} years old on January 1, 2026. You can register to vote using Form 6.",
-      notEligibleMsg: "You are not yet eligible. You turn 18 on {date}. The qualifying date on or after your 18th birthday is when you can register.",
-      upcomingQualifying: "Upcoming Qualifying Dates"
+      eligibleMsg:
+        "You are eligible! You will be {age} years old on January 1, 2026. You can register to vote using Form 6.",
+      notEligibleMsg:
+        "You are not yet eligible. You turn 18 on {date}. The qualifying date on or after your 18th birthday is when you can register.",
+      upcomingQualifying: "Upcoming Qualifying Dates",
     },
     results: {
-      subtitle: "Explore historical Lok Sabha election results, seat tallies, and vote shares across the nation.",
+      subtitle:
+        "Explore historical Lok Sabha election results, seat tallies, and vote shares across the nation.",
       ls2024: "Lok Sabha 2024",
       ls2019: "Lok Sabha 2019",
       geoWinners: "Geographical Winners",
@@ -216,24 +229,25 @@ export const translations = {
       party: "Party",
       seatsWon: "Seats Won",
       change: "Change",
-      noChange: "No change"
+      noChange: "No change",
     },
     news: {
       hubTitle: "Election News Hub",
-      hubSubtitle: "Latest official announcements, verified updates, and fact-checks for the ongoing elections.",
+      hubSubtitle:
+        "Latest official announcements, verified updates, and fact-checks for the ongoing elections.",
       categories: {
         all: "All",
         official: "Official",
         updates: "Updates",
         factCheck: "Fact Check",
-        guide: "Guide"
+        guide: "Guide",
       },
       verified: "Verified",
       fakeAlert: "Fake News Alert",
       source: "Source",
       readFull: "Read Full",
-      noNews: "No news found for the selected category."
-    }
+      noNews: "No news found for the selected category.",
+    },
   },
   hi: {
     nav: {
@@ -247,7 +261,7 @@ export const translations = {
       aiChat: "एआई चैट",
       dashboard: "डैशबोर्ड",
       admin: "एडमिन",
-      candidates: "उम्मीदवार"
+      candidates: "उम्मीदवार",
     },
     common: {
       signIn: "लॉग इन करें",
@@ -258,11 +272,12 @@ export const translations = {
       back: "पीछे",
       submit: "जमा करें",
       cancel: "रद्द करें",
-      explore: "देखें"
+      explore: "देखें",
     },
     home: {
       heroTitle: "आपके वोट को सशक्त बनाना",
-      heroSubtitle: "आपका व्यापक भारत चुनाव मंच। दुनिया के सबसे बड़े लोकतंत्र में भाग लेने के लिए आपको जो कुछ भी चाहिए।",
+      heroSubtitle:
+        "आपका व्यापक भारत चुनाव मंच। दुनिया के सबसे बड़े लोकतंत्र में भाग लेने के लिए आपको जो कुछ भी चाहिए।",
       heroBadge: "भारत का व्यापक चुनाव मंच",
       heroHindiSubtitle: "भारतीय चुनाव के लिए आपका संपूर्ण मार्गदर्शक",
       getStarted: "शुरू करें",
@@ -271,7 +286,8 @@ export const translations = {
       featuredNews: "प्रमुख समाचार",
       nextElection: "अगला प्रमुख चुनाव",
       whatToDo: "आप क्या करना चाहेंगे?",
-      accessTools: "भारतीय मतदाता, उम्मीदवार या चुनाव कार्यकर्ता के लिए आवश्यक हर उपकरण तक पहुंचें।",
+      accessTools:
+        "भारतीय मतदाता, उम्मीदवार या चुनाव कार्यकर्ता के लिए आवश्यक हर उपकरण तक पहुंचें।",
       resultsSnapshot: "लोकसभा 2024 परिणाम स्नैपशॉट",
       viewFullResults: "पूर्ण परिणाम देखें",
       majorityMark: "बहुमत का आंकड़ा",
@@ -285,11 +301,12 @@ export const translations = {
       seats: "सीटें",
       checkVoterStatus: "वोटर स्टेटस जांचें",
       guideTo: "आपका मार्गदर्शक",
-      indianElections: "भारतीय चुनाव"
+      indianElections: "भारतीय चुनाव",
     },
     candidates: {
       title: "उम्मीदवार निर्देशिका",
-      subtitle: "राज्य, पार्टी, निर्वाचन क्षेत्र और अन्य के आधार पर उम्मीदवारों को खोजें और फ़िल्टर करें। 3 तक की साथ-साथ तुलना करें।",
+      subtitle:
+        "राज्य, पार्टी, निर्वाचन क्षेत्र और अन्य के आधार पर उम्मीदवारों को खोजें और फ़िल्टर करें। 3 तक की साथ-साथ तुलना करें।",
       searchPlaceholder: "नाम या निर्वाचन क्षेत्र द्वारा खोजें...",
       allParties: "सभी पार्टियां",
       allStates: "सभी राज्य",
@@ -324,11 +341,12 @@ export const translations = {
       fullName: "पूरा नाम",
       gender: "लिंग",
       electionYear: "चुनाव वर्ष",
-      totalVotes: "कुल वोट"
+      totalVotes: "कुल वोट",
     },
     states: {
       title: "राज्यों को देखें",
-      subtitle: "भारत के प्रत्येक राज्य और केंद्र शासित प्रदेश के लिए विस्तृत चुनाव आंकड़े और जानकारी।",
+      subtitle:
+        "भारत के प्रत्येक राज्य और केंद्र शासित प्रदेश के लिए विस्तृत चुनाव आंकड़े और जानकारी।",
       capital: "राजधानी",
       type: "प्रकार",
       lsSeats: "लोकसभा सीटें",
@@ -346,11 +364,12 @@ export const translations = {
       divisions: "मंडल के आधार पर निर्वाचन क्षेत्र",
       phaseBreakdown: "चरण विवरण",
       summary: "चुनाव सारांश",
-      backToAll: "सभी राज्यों पर वापस जाएं"
+      backToAll: "सभी राज्यों पर वापस जाएं",
     },
     booth: {
       title: "अपना मतदान केंद्र खोजें",
-      subtitle: "अपने ईपीआईसी नंबर से खोजें या अपने निकटतम मतदान केंद्र का पता लगाने और दिशा-निर्देश प्राप्त करने के लिए अपने स्थान का उपयोग करें।",
+      subtitle:
+        "अपने ईपीआईसी नंबर से खोजें या अपने निकटतम मतदान केंद्र का पता लगाने और दिशा-निर्देश प्राप्त करने के लिए अपने स्थान का उपयोग करें।",
       searchOptions: "खोज विकल्प",
       epicNumber: "ईपीआईसी नंबर (वोटर आईडी)",
       searchPlaceholder: "उदा. ABC1234567",
@@ -363,16 +382,18 @@ export const translations = {
       blo: "बीएलओ",
       getDirections: "दिशा-निर्देश प्राप्त करें",
       mapFailed: "मानचित्र लोड करने में विफल",
-      mapFailedDesc: "हम Google मानचित्र लोड नहीं कर सके। कृपया पर्यावरण चर में अपनी एपीआई कुंजी जांचें।",
+      mapFailedDesc:
+        "हम Google मानचित्र लोड नहीं कर सके। कृपया पर्यावरण चर में अपनी एपीआई कुंजी जांचें।",
       accessibility: {
         ramp: "रैंप",
         water: "पानी",
-        toilet: "शौचालय"
-      }
+        toilet: "शौचालय",
+      },
     },
     elections: {
       hubTitle: "चुनाव हब",
-      hubSubtitle: "संपूर्ण चुनाव डेटा - प्रत्येक भारतीय चुनाव के लिए चरण, समयरेखा, तिथियां और राज्य कवरेज।",
+      hubSubtitle:
+        "संपूर्ण चुनाव डेटा - प्रत्येक भारतीय चुनाव के लिए चरण, समयरेखा, तिथियां और राज्य कवरेज।",
       lokSabha: "लोकसभा",
       vidhanSabha: "विधानसभा",
       byElections: "उपचुनाव",
@@ -390,11 +411,12 @@ export const translations = {
       step: "चरण",
       duration: "आंकड़ा",
       nextMajor: "अगला प्रमुख राज्य चुनाव है।",
-      dataSoon: "डेटा जल्द ही आ रहा है। अपडेट के लिए वापस देखें।"
+      dataSoon: "डेटा जल्द ही आ रहा है। अपडेट के लिए वापस देखें।",
     },
     rules: {
       libraryTitle: "ईसीआई दिशा-निर्देश पुस्तकालय",
-      librarySubtitle: "भारत निर्वाचन आयोग के संपूर्ण नियम - आदर्श आचार संहिता, अभियान नियम, ईवीएम/वीवीपीएटी, व्यय सीमा, और बहुत कुछ।",
+      librarySubtitle:
+        "भारत निर्वाचन आयोग के संपूर्ण नियम - आदर्श आचार संहिता, अभियान नियम, ईवीएम/वीवीपीएटी, व्यय सीमा, और बहुत कुछ।",
       searchPlaceholder: "नियम खोजें (उदा., 'MCC', 'व्यय', 'नोटा')...",
       whatThisMeans: "आपके लिए इसका क्या मतलब है",
       keyPoints: "मुख्य बिंदु",
@@ -405,11 +427,12 @@ export const translations = {
       locationCriteria: "स्थान मानदंड",
       keyOfficials: "प्रमुख अधिकारी",
       voterLimit: "मतदाता सीमा",
-      noResults: "आपकी खोज से कोई नियम मेल नहीं खाता। अलग-अलग कीवर्ड आज़माएं।"
+      noResults: "आपकी खोज से कोई नियम मेल नहीं खाता। अलग-अलग कीवर्ड आज़माएं।",
     },
     voter: {
       hubTitle: "मतदाता सेवा केंद्र",
-      hubSubtitle: "वोट देने के लिए पंजीकरण करें, अपने विवरण को सही करें, पात्रता की जांच करें, मतदाता पहचान पत्र डाउनलोड करें, और एक ही स्थान पर सभी मतदाता सेवाओं का उपयोग करें।",
+      hubSubtitle:
+        "वोट देने के लिए पंजीकरण करें, अपने विवरण को सही करें, पात्रता की जांच करें, मतदाता पहचान पत्र डाउनलोड करें, और एक ही स्थान पर सभी मतदाता सेवाओं का उपयोग करें।",
       nvspPortal: "एनवीएसपी पोर्टल",
       checkVoterList: "वोटर लिस्ट जांचें",
       call1950: "1950 पर कॉल करें",
@@ -425,7 +448,8 @@ export const translations = {
       stepByStep: "चरण-दर-चरण प्रक्रिया",
       requiredDocs: "आवश्यक दस्तावेज",
       qualifyingDates: "अर्हता तिथियां",
-      qualifyingDesc: "पंजीकरण के लिए अर्हता तिथि को या उससे पहले आपकी आयु 18 वर्ष होनी चाहिए।",
+      qualifyingDesc:
+        "पंजीकरण के लिए अर्हता तिथि को या उससे पहले आपकी आयु 18 वर्ष होनी चाहिए।",
       alternativeIds: "12 वैकल्पिक आईडी स्वीकार किए जाते हैं",
       callNow: "अभी 1950 पर कॉल करें",
       callDesc: "टोल-फ्री | चुनाव के दौरान 24/7 उपलब्ध",
@@ -433,12 +457,15 @@ export const translations = {
       ageCheckerDesc: "क्या आप अगली अर्हता तिथि तक 18 वर्ष के हो जाएंगे?",
       enterDob: "अपनी जन्म तिथि दर्ज करें",
       checkButton: "पात्रता जांचें",
-      eligibleMsg: "आप पात्र हैं! आप 1 जनवरी, 2026 को {age} वर्ष के हो जाएंगे। आप फॉर्म 6 का उपयोग करके पंजीकरण कर सकते हैं।",
-      notEligibleMsg: "आप अभी तक पात्र नहीं हैं। आप {date} को 18 वर्ष के हो जाएंगे। आपके 18वें जन्मदिन पर या उसके बाद की अर्हता तिथि वह समय है जब आप पंजीकरण कर सकते हैं।",
-      upcomingQualifying: "आगामी अर्हता तिथियां"
+      eligibleMsg:
+        "आप पात्र हैं! आप 1 जनवरी, 2026 को {age} वर्ष के हो जाएंगे। आप फॉर्म 6 का उपयोग करके पंजीकरण कर सकते हैं।",
+      notEligibleMsg:
+        "आप अभी तक पात्र नहीं हैं। आप {date} को 18 वर्ष के हो जाएंगे। आपके 18वें जन्मदिन पर या उसके बाद की अर्हता तिथि वह समय है जब आप पंजीकरण कर सकते हैं।",
+      upcomingQualifying: "आगामी अर्हता तिथियां",
     },
     results: {
-      subtitle: "देश भर के ऐतिहासिक लोकसभा चुनाव परिणामों, सीटों की संख्या और वोट शेयरों का पता लगाएं।",
+      subtitle:
+        "देश भर के ऐतिहासिक लोकसभा चुनाव परिणामों, सीटों की संख्या और वोट शेयरों का पता लगाएं।",
       ls2024: "लोकसभा 2024",
       ls2019: "लोकसभा 2019",
       geoWinners: "भौगोलिक विजेता",
@@ -450,23 +477,24 @@ export const translations = {
       party: "पार्टी",
       seatsWon: "जीती गई सीटें",
       change: "परिवर्तन",
-      noChange: "कोई बदलाव नहीं"
+      noChange: "कोई बदलाव नहीं",
     },
     news: {
       hubTitle: "चुनाव समाचार केंद्र",
-      hubSubtitle: "चल रहे चुनावों के लिए नवीनतम आधिकारिक घोषणाएं, सत्यापित अपडेट और तथ्य-जांच।",
+      hubSubtitle:
+        "चल रहे चुनावों के लिए नवीनतम आधिकारिक घोषणाएं, सत्यापित अपडेट और तथ्य-जांच।",
       categories: {
         all: "सभी",
         official: "आधिकारिक",
         updates: "अपडेट",
         factCheck: "तथ्य जांच",
-        guide: "मार्गदर्शिका"
+        guide: "मार्गदर्शिका",
       },
       verified: "सत्यापित",
       fakeAlert: "फेक न्यूज़ अलर्ट",
       source: "स्रोत",
       readFull: "पूरा पढ़ें",
-      noNews: "चयनित श्रेणी के लिए कोई समाचार नहीं मिला।"
-    }
-  }
+      noNews: "चयनित श्रेणी के लिए कोई समाचार नहीं मिला।",
+    },
+  },
 };

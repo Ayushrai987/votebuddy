@@ -46,12 +46,19 @@ export default function MobileNav() {
                   : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
               }`}
             >
-              <span className="text-xl leading-none" aria-hidden="true">{link.icon}</span>
-              <span className={`text-[0.6rem] font-semibold ${isActive ? "text-saffron-500" : ""}`}>
+              <span className="text-xl leading-none" aria-hidden="true">
+                {link.icon}
+              </span>
+              <span
+                className={`text-[0.6rem] font-semibold ${isActive ? "text-saffron-500" : ""}`}
+              >
                 {t(`nav.${link.key}`)}
               </span>
               {isActive && (
-                <div className="absolute bottom-1 w-6 h-0.5 rounded-full bg-saffron-500" aria-hidden="true" />
+                <div
+                  className="absolute bottom-1 w-6 h-0.5 rounded-full bg-saffron-500"
+                  aria-hidden="true"
+                />
               )}
             </Link>
           );

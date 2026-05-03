@@ -13,7 +13,8 @@ export default function StatesPage() {
   const [filter, setFilter] = useState<"all" | "State" | "UT">("all");
 
   const filtered = states.filter((s) => {
-    const matchSearch = s.name.toLowerCase().includes(search.toLowerCase()) ||
+    const matchSearch =
+      s.name.toLowerCase().includes(search.toLowerCase()) ||
       s.capital.toLowerCase().includes(search.toLowerCase());
     const matchFilter = filter === "all" || s.type === filter;
     return matchSearch && matchFilter;
@@ -30,14 +31,21 @@ export default function StatesPage() {
           State Explorer
         </h1>
         <p className="text-[var(--text-secondary)] max-w-xl mx-auto">
-          Explore detailed election data for all 28 states and 8 union territories of India.
+          Explore detailed election data for all 28 states and 8 union
+          territories of India.
         </p>
       </div>
 
       {/* Search & Filter */}
       <div className="flex flex-col sm:flex-row items-center gap-3 mb-8 max-w-xl mx-auto">
         <div className="relative flex-1 w-full">
-          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--text-muted)]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
             <circle cx="11" cy="11" r="8" />
             <path strokeLinecap="round" d="M21 21l-4.35-4.35" />
           </svg>
@@ -69,20 +77,36 @@ export default function StatesPage() {
       {/* Summary */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
         <div className="stat-card">
-          <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">Total Entities</span>
-          <p className="text-2xl font-extrabold gradient-text mt-1">{filtered.length}</p>
+          <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">
+            Total Entities
+          </span>
+          <p className="text-2xl font-extrabold gradient-text mt-1">
+            {filtered.length}
+          </p>
         </div>
         <div className="stat-card">
-          <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">Total LS Seats</span>
-          <p className="text-2xl font-extrabold gradient-text mt-1">{filtered.reduce((a, s) => a + s.loksabha, 0)}</p>
+          <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">
+            Total LS Seats
+          </span>
+          <p className="text-2xl font-extrabold gradient-text mt-1">
+            {filtered.reduce((a, s) => a + s.loksabha, 0)}
+          </p>
         </div>
         <div className="stat-card">
-          <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">Total VS Seats</span>
-          <p className="text-2xl font-extrabold gradient-text mt-1">{filtered.reduce((a, s) => a + s.vidhansabha, 0).toLocaleString()}</p>
+          <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">
+            Total VS Seats
+          </span>
+          <p className="text-2xl font-extrabold gradient-text mt-1">
+            {filtered.reduce((a, s) => a + s.vidhansabha, 0).toLocaleString()}
+          </p>
         </div>
         <div className="stat-card">
-          <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">Total Districts</span>
-          <p className="text-2xl font-extrabold gradient-text mt-1">{filtered.reduce((a, s) => a + s.districts, 0)}</p>
+          <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">
+            Total Districts
+          </span>
+          <p className="text-2xl font-extrabold gradient-text mt-1">
+            {filtered.reduce((a, s) => a + s.districts, 0)}
+          </p>
         </div>
       </div>
 
@@ -101,7 +125,9 @@ export default function StatesPage() {
       {/* UTs grid */}
       {utsList.length > 0 && (
         <>
-          <h2 className="section-heading mb-4">Union Territories ({utsList.length})</h2>
+          <h2 className="section-heading mb-4">
+            Union Territories ({utsList.length})
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
             {utsList.map((ut) => (
               <UTCard key={ut.slug} ut={ut as any} />
@@ -113,11 +139,11 @@ export default function StatesPage() {
       {filtered.length === 0 && (
         <div className="text-center py-12">
           <span className="text-5xl block mb-4" />
-          <p className="text-[var(--text-secondary)]">No states or UTs match your search.</p>
+          <p className="text-[var(--text-secondary)]">
+            No states or UTs match your search.
+          </p>
         </div>
       )}
     </div>
   );
 }
-
-

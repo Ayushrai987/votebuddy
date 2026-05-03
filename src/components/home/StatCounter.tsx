@@ -47,7 +47,7 @@ export function StatCounter({ target, suffix = "" }: StatCounterProps) {
           }, 25);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     if (currentRef) {
       observer.observe(currentRef);
@@ -65,7 +65,8 @@ export function StatCounter({ target, suffix = "" }: StatCounterProps) {
       aria-label={`${target.toLocaleString()}${suffix}`}
       role="text"
     >
-      {count.toLocaleString()}{suffix}
+      {count.toLocaleString()}
+      {suffix}
     </span>
   );
 }

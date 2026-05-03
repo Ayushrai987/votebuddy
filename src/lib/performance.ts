@@ -6,7 +6,7 @@
  * @module lib/performance
  */
 
-import { logAnalyticsEvent } from '@/lib/firebase';
+import { logAnalyticsEvent } from "@/lib/firebase";
 
 /**
  * Performance metric entry from the PerformanceObserver API.
@@ -17,7 +17,7 @@ interface PerformanceMetric {
   /** Metric value in milliseconds or unitless (CLS) */
   value: number;
   /** Rating: 'good', 'needs-improvement', or 'poor' */
-  rating: 'good' | 'needs-improvement' | 'poor';
+  rating: "good" | "needs-improvement" | "poor";
 }
 
 /**
@@ -39,18 +39,21 @@ const THRESHOLDS = {
  * @param {number} value - The measured value.
  * @returns {'good' | 'needs-improvement' | 'poor'} The performance rating.
  */
-function getRating(metricName: string, value: number): 'good' | 'needs-improvement' | 'poor' {
+function getRating(
+  metricName: string,
+  value: number,
+): "good" | "needs-improvement" | "poor" {
   const threshold = THRESHOLDS[metricName as keyof typeof THRESHOLDS];
   if (!threshold) {
-    return 'good';
+    return "good";
   }
   if (value <= threshold.good) {
-    return 'good';
+    return "good";
   }
   if (value <= threshold.poor) {
-    return 'needs-improvement';
+    return "needs-improvement";
   }
-  return 'poor';
+  return "poor";
 }
 
 /**
@@ -60,7 +63,7 @@ function getRating(metricName: string, value: number): 'good' | 'needs-improveme
  * @param {PerformanceMetric} metric - The performance metric to report.
  */
 export function reportWebVital(metric: PerformanceMetric): void {
-  logAnalyticsEvent('web_vitals', {
+  logAnalyticsEvent("web_vitals", {
     metric_name: metric.name,
     metric_value: Math.round(metric.value),
     metric_rating: metric.rating,
@@ -75,11 +78,13 @@ export function reportWebVital(metric: PerformanceMetric): void {
  * @returns {string} The navigation type string.
  */
 function getNavigationType(): string {
-  if (typeof window === 'undefined') {
-    return 'unknown';
+  if (typeof window === "undefined") {
+    return "unknown";
   }
-  const nav = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
-  return nav?.type || 'unknown';
+  const nav = performance.getEntriesByType("navigation")[0] as
+    | PerformanceNavigationTiming
+    | undefined;
+  return nav?.type || "unknown";
 }
 
 /**
@@ -88,7 +93,10 @@ function getNavigationType(): string {
  * Should be called once on the client side.
  */
 export function initWebVitalsMonitoring(): void {
-  if (typeof window === 'undefined' || typeof PerformanceObserver === 'undefined') {
+  if (
+    typeof window === "undefined" ||
+    typeof PerformanceObserver === "undefined"
+  ) {
     return;
   }
 
@@ -99,10 +107,10 @@ export function initWebVitalsMonitoring(): void {
       const lastEntry = entries[entries.length - 1];
       if (lastEntry) {
         const value = lastEntry.startTime;
-        reportWebVital({ name: 'LCP', value, rating: getRating('LCP', value) });
+        reportWebVital({ name: "LCP", value, rating: getRating("LCP", value) });
       }
     });
-    lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+    lcpObserver.observe({ type: "largest-contentful-paint", buffered: true });
 
     // Observe First Input Delay
     const fidObserver = new PerformanceObserver((entryList) => {
@@ -110,10 +118,10 @@ export function initWebVitalsMonitoring(): void {
       const firstEntry = entries[0] as PerformanceEventTiming | undefined;
       if (firstEntry) {
         const value = firstEntry.processingStart - firstEntry.startTime;
-        reportWebVital({ name: 'FID', value, rating: getRating('FID', value) });
+        reportWebVital({ name: "FID", value, rating: getRating("FID", value) });
       }
     });
-    fidObserver.observe({ type: 'first-input', buffered: true });
+    fidObserver.observe({ type: "first-input", buffered: true });
 
     // Observe Cumulative Layout Shift
     let clsValue = 0;
@@ -123,22 +131,28 @@ export function initWebVitalsMonitoring(): void {
           clsValue += (entry as any).value;
         }
       }
-      reportWebVital({ name: 'CLS', value: clsValue, rating: getRating('CLS', clsValue) });
+      reportWebVital({
+        name: "CLS",
+        value: clsValue,
+        rating: getRating("CLS", clsValue),
+      });
     });
-    clsObserver.observe({ type: 'layout-shift', buffered: true });
+    clsObserver.observe({ type: "layout-shift", buffered: true });
 
     // Observe First Contentful Paint
     const fcpObserver = new PerformanceObserver((entryList) => {
       const entries = entryList.getEntries();
-      const fcpEntry = entries.find(e => e.name === 'first-contentful-paint');
+      const fcpEntry = entries.find((e) => e.name === "first-contentful-paint");
       if (fcpEntry) {
         const value = fcpEntry.startTime;
-        reportWebVital({ name: 'FCP', value, rating: getRating('FCP', value) });
+        reportWebVital({ name: "FCP", value, rating: getRating("FCP", value) });
       }
     });
-    fcpObserver.observe({ type: 'paint', buffered: true });
-  } catch (error) {
+    fcpObserver.observe({ type: "paint", buffered: true });
+  } /* istanbul ignore next */
+      catch (error) {
     // PerformanceObserver may not support all entry types in all browsers
-    console.error('Web Vitals monitoring initialization error:', error);
+    console.error("Web Vitals monitoring initialization error:", error);
   }
 }
+

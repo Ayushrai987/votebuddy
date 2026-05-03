@@ -13,13 +13,134 @@ export const lokSabha2024: Election = {
   electionDate: "2024-06-04",
   isAnnounced: true,
   phases: [
-    { phase: 1, date: "April 19, 2024", states: ["Rajasthan", "Tamil Nadu", "Uttarakhand", "Arunachal Pradesh", "Meghalaya", "Sikkim", "Mizoram", "Nagaland", "Tripura", "Manipur", "Andaman & Nicobar", "Lakshadweep", "Puducherry", "Jammu & Kashmir", "Assam", "Bihar", "Chhattisgarh", "Madhya Pradesh", "Maharashtra", "Uttar Pradesh", "West Bengal"], seats: 102 },
-    { phase: 2, date: "April 26, 2024", states: ["Assam", "Bihar", "Chhattisgarh", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Rajasthan", "Tripura", "Uttar Pradesh", "West Bengal", "Jammu & Kashmir"], seats: 89 },
-    { phase: 3, date: "May 7, 2024", states: ["Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Karnataka", "Madhya Pradesh", "Maharashtra", "Uttar Pradesh", "West Bengal", "Dadra & Nagar Haveli", "Daman & Diu"], seats: 94 },
-    { phase: 4, date: "May 13, 2024", states: ["Andhra Pradesh", "Bihar", "Jharkhand", "Madhya Pradesh", "Maharashtra", "Odisha", "Telangana", "Uttar Pradesh", "West Bengal", "Jammu & Kashmir"], seats: 96 },
-    { phase: 5, date: "May 20, 2024", states: ["Bihar", "Jharkhand", "Maharashtra", "Odisha", "Uttar Pradesh", "West Bengal", "Ladakh", "Jammu & Kashmir"], seats: 49 },
-    { phase: 6, date: "May 25, 2024", states: ["Bihar", "Haryana", "Jharkhand", "Odisha", "Uttar Pradesh", "West Bengal", "Delhi"], seats: 57 },
-    { phase: 7, date: "June 1, 2024", states: ["Bihar", "Himachal Pradesh", "Jharkhand", "Odisha", "Punjab", "Uttar Pradesh", "West Bengal", "Chandigarh"], seats: 57 },
+    {
+      phase: 1,
+      date: "April 19, 2024",
+      states: [
+        "Rajasthan",
+        "Tamil Nadu",
+        "Uttarakhand",
+        "Arunachal Pradesh",
+        "Meghalaya",
+        "Sikkim",
+        "Mizoram",
+        "Nagaland",
+        "Tripura",
+        "Manipur",
+        "Andaman & Nicobar",
+        "Lakshadweep",
+        "Puducherry",
+        "Jammu & Kashmir",
+        "Assam",
+        "Bihar",
+        "Chhattisgarh",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Uttar Pradesh",
+        "West Bengal",
+      ],
+      seats: 102,
+    },
+    {
+      phase: 2,
+      date: "April 26, 2024",
+      states: [
+        "Assam",
+        "Bihar",
+        "Chhattisgarh",
+        "Karnataka",
+        "Kerala",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Manipur",
+        "Rajasthan",
+        "Tripura",
+        "Uttar Pradesh",
+        "West Bengal",
+        "Jammu & Kashmir",
+      ],
+      seats: 89,
+    },
+    {
+      phase: 3,
+      date: "May 7, 2024",
+      states: [
+        "Assam",
+        "Bihar",
+        "Chhattisgarh",
+        "Goa",
+        "Gujarat",
+        "Karnataka",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Uttar Pradesh",
+        "West Bengal",
+        "Dadra & Nagar Haveli",
+        "Daman & Diu",
+      ],
+      seats: 94,
+    },
+    {
+      phase: 4,
+      date: "May 13, 2024",
+      states: [
+        "Andhra Pradesh",
+        "Bihar",
+        "Jharkhand",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Odisha",
+        "Telangana",
+        "Uttar Pradesh",
+        "West Bengal",
+        "Jammu & Kashmir",
+      ],
+      seats: 96,
+    },
+    {
+      phase: 5,
+      date: "May 20, 2024",
+      states: [
+        "Bihar",
+        "Jharkhand",
+        "Maharashtra",
+        "Odisha",
+        "Uttar Pradesh",
+        "West Bengal",
+        "Ladakh",
+        "Jammu & Kashmir",
+      ],
+      seats: 49,
+    },
+    {
+      phase: 6,
+      date: "May 25, 2024",
+      states: [
+        "Bihar",
+        "Haryana",
+        "Jharkhand",
+        "Odisha",
+        "Uttar Pradesh",
+        "West Bengal",
+        "Delhi",
+      ],
+      seats: 57,
+    },
+    {
+      phase: 7,
+      date: "June 1, 2024",
+      states: [
+        "Bihar",
+        "Himachal Pradesh",
+        "Jharkhand",
+        "Odisha",
+        "Punjab",
+        "Uttar Pradesh",
+        "West Bengal",
+        "Chandigarh",
+      ],
+      seats: 57,
+    },
   ],
 };
 
@@ -34,7 +155,7 @@ export const upcomingElections2026: Election[] = [
     status: "upcoming",
     electionDate: "2026-05-15", // Estimated for April-May
     isAnnounced: false,
-    phases: []
+    phases: [],
   },
   {
     id: "tn-2026",
@@ -43,9 +164,9 @@ export const upcomingElections2026: Election[] = [
     type: "Vidhan Sabha",
     totalSeats: 234,
     status: "upcoming",
-    electionDate: "2026-05-10", 
+    electionDate: "2026-05-10",
     isAnnounced: false,
-    phases: []
+    phases: [],
   },
   {
     id: "kl-2026",
@@ -56,7 +177,7 @@ export const upcomingElections2026: Election[] = [
     status: "upcoming",
     electionDate: "2026-05-08",
     isAnnounced: false,
-    phases: []
+    phases: [],
   },
   {
     id: "as-2026",
@@ -67,7 +188,7 @@ export const upcomingElections2026: Election[] = [
     status: "upcoming",
     electionDate: "2026-04-25",
     isAnnounced: false,
-    phases: []
+    phases: [],
   },
   {
     id: "py-2026",
@@ -78,19 +199,21 @@ export const upcomingElections2026: Election[] = [
     status: "upcoming",
     electionDate: "2026-05-12",
     isAnnounced: false,
-    phases: []
-  }
+    phases: [],
+  },
 ];
 
 export const allElections: Election[] = [
   lokSabha2024,
-  ...upcomingElections2026
+  ...upcomingElections2026,
 ];
 
 // Helper Functions
 export const getElectionStatus = (electionDateStr: string | undefined) => {
-  if (!electionDateStr) { return { label: "Upcoming", color: "orange", status: "upcoming" as const }; }
-  
+  if (!electionDateStr) {
+    return { label: "Upcoming", color: "orange", status: "upcoming" as const };
+  }
+
   const now = new Date();
   const electionDate = new Date(electionDateStr);
   const diffTime = electionDate.getTime() - now.getTime();
@@ -99,7 +222,12 @@ export const getElectionStatus = (electionDateStr: string | undefined) => {
   if (diffDays < 0) {
     return { label: "Concluded", color: "gray", status: "completed" as const };
   } else if (diffDays <= 7) {
-    return { label: "Live", color: "orange", status: "live" as const, pulse: true };
+    return {
+      label: "Live",
+      color: "orange",
+      status: "live" as const,
+      pulse: true,
+    };
   } else {
     return { label: "Upcoming", color: "orange", status: "upcoming" as const };
   }
@@ -108,8 +236,12 @@ export const getElectionStatus = (electionDateStr: string | undefined) => {
 export const getNextElection = (): Election | undefined => {
   const now = new Date();
   return allElections
-    .filter(e => e.electionDate && new Date(e.electionDate) > now)
-    .sort((a, b) => new Date(a.electionDate!).getTime() - new Date(b.electionDate!).getTime())[0];
+    .filter((e) => e.electionDate && new Date(e.electionDate) > now)
+    .sort(
+      (a, b) =>
+        new Date(a.electionDate!).getTime() -
+        new Date(b.electionDate!).getTime(),
+    )[0];
 };
 
 export const upDeepDive = {
@@ -119,54 +251,162 @@ export const upDeepDive = {
   totalVoters: "15.2 Crore",
   phases: 7,
   divisions: {
-    "Agra Division": ["Agra", "Fatehpur Sikri", "Firozabad", "Mainpuri", "Mathura"],
+    "Agra Division": [
+      "Agra",
+      "Fatehpur Sikri",
+      "Firozabad",
+      "Mainpuri",
+      "Mathura",
+    ],
     "Prayagraj Division": ["Prayagraj", "Phulpur", "Pratapgarh", "Barabanki"],
     "Azamgarh Division": ["Azamgarh", "Lalganj", "Ghosi", "Ballia"],
-    "Bareilly Division": ["Bareilly", "Pilibhit", "Shahjahanpur", "Badaun", "Aonla"],
-    "Basti Division": ["Basti", "Sant Kabir Nagar", "Khalilabad", "Domariaganj"],
+    "Bareilly Division": [
+      "Bareilly",
+      "Pilibhit",
+      "Shahjahanpur",
+      "Badaun",
+      "Aonla",
+    ],
+    "Basti Division": [
+      "Basti",
+      "Sant Kabir Nagar",
+      "Khalilabad",
+      "Domariaganj",
+    ],
     "Chitrakoot Division": ["Banda", "Hamirpur", "Fatehpur"],
     "Devi Patan Division": ["Gonda", "Balrampur", "Shravasti"],
-    "Faizabad/Ayodhya Division": ["Ayodhya", "Sultanpur", "Amethi", "Ambedkar Nagar", "Bahraich", "Kaiserganj"],
-    "Gorakhpur Division": ["Gorakhpur", "Maharajganj", "Bansgaon", "Deoria", "Kushinagar", "Salempur"],
+    "Faizabad/Ayodhya Division": [
+      "Ayodhya",
+      "Sultanpur",
+      "Amethi",
+      "Ambedkar Nagar",
+      "Bahraich",
+      "Kaiserganj",
+    ],
+    "Gorakhpur Division": [
+      "Gorakhpur",
+      "Maharajganj",
+      "Bansgaon",
+      "Deoria",
+      "Kushinagar",
+      "Salempur",
+    ],
     "Jhansi Division": ["Jhansi", "Jalaun", "Lalitpur"],
-    "Kanpur Division": ["Kanpur", "Akbarpur", "Etawah", "Farrukhabad", "Kannauj", "Unnao"],
-    "Lucknow Division": ["Lucknow", "Mohanlalganj", "Rae Bareli", "Sitapur", "Dhaurahra", "Misrikh", "Hardoi"],
-    "Meerut Division": ["Meerut", "Baghpat", "Ghaziabad", "Gautam Buddha Nagar", "Hapur", "Bulandshahr", "Khurja"],
-    "Mirzapur Division": ["Mirzapur", "Robertsganj", "Bhadohi", "Jaunpur", "Machhlishahr"],
+    "Kanpur Division": [
+      "Kanpur",
+      "Akbarpur",
+      "Etawah",
+      "Farrukhabad",
+      "Kannauj",
+      "Unnao",
+    ],
+    "Lucknow Division": [
+      "Lucknow",
+      "Mohanlalganj",
+      "Rae Bareli",
+      "Sitapur",
+      "Dhaurahra",
+      "Misrikh",
+      "Hardoi",
+    ],
+    "Meerut Division": [
+      "Meerut",
+      "Baghpat",
+      "Ghaziabad",
+      "Gautam Buddha Nagar",
+      "Hapur",
+      "Bulandshahr",
+      "Khurja",
+    ],
+    "Mirzapur Division": [
+      "Mirzapur",
+      "Robertsganj",
+      "Bhadohi",
+      "Jaunpur",
+      "Machhlishahr",
+    ],
     "Moradabad Division": ["Moradabad", "Rampur", "Sambhal", "Amroha"],
-    "Saharanpur Division": ["Saharanpur", "Kairana", "Muzaffarnagar", "Bijnor", "Nagina"],
+    "Saharanpur Division": [
+      "Saharanpur",
+      "Kairana",
+      "Muzaffarnagar",
+      "Bijnor",
+      "Nagina",
+    ],
     "Varanasi Division": ["Varanasi", "Chandauli", "Ghazipur"],
   },
   phaseBreakdown: [
-    { phase: 1, districts: "Western UP - Shamli, Muzaffarnagar, Meerut, Hapur, Ghaziabad, G.B.Nagar, Bulandshahr, Aligarh, Baghpat, Bijnor, Saharanpur", seats: 10, date: "April 19, 2024" },
-    { phase: 2, districts: "Amroha, Moradabad, Rampur, Bareilly, Pilibhit, Shahjahanpur, Kheri, Hardoi, Sambhal, Badaun", seats: 8, date: "April 26, 2024" },
-    { phase: 3, districts: "Hathras, Agra, Firozabad, Mainpuri, Etah, Kasganj, Etawah, Farrukhabad, Kannauj, Auraiya", seats: 10, date: "May 7, 2024" },
-    { phase: 4, districts: "Lucknow, Sitapur, Rae Bareli, Unnao, Kanpur, Fatehpur, Banda, Hamirpur, Jhansi, Lalitpur, Jalaun", seats: 12, date: "May 13, 2024" },
-    { phase: 5, districts: "Prayagraj, Pratapgarh, Barabanki, Sultanpur, Amethi, Gonda, Bahraich, Shravasti, Balrampur", seats: 12, date: "May 20, 2024" },
-    { phase: 6, districts: "Ayodhya, Ambedkar Nagar, Basti, S.K.Nagar, Gorakhpur, Maharajganj, Deoria, Kushinagar, Ballia", seats: 14, date: "May 25, 2024" },
-    { phase: 7, districts: "Varanasi, Chandauli, Mirzapur, Bhadohi, Jaunpur, Ghazipur, Azamgarh, Mau", seats: 14, date: "June 1, 2024" },
+    {
+      phase: 1,
+      districts:
+        "Western UP - Shamli, Muzaffarnagar, Meerut, Hapur, Ghaziabad, G.B.Nagar, Bulandshahr, Aligarh, Baghpat, Bijnor, Saharanpur",
+      seats: 10,
+      date: "April 19, 2024",
+    },
+    {
+      phase: 2,
+      districts:
+        "Amroha, Moradabad, Rampur, Bareilly, Pilibhit, Shahjahanpur, Kheri, Hardoi, Sambhal, Badaun",
+      seats: 8,
+      date: "April 26, 2024",
+    },
+    {
+      phase: 3,
+      districts:
+        "Hathras, Agra, Firozabad, Mainpuri, Etah, Kasganj, Etawah, Farrukhabad, Kannauj, Auraiya",
+      seats: 10,
+      date: "May 7, 2024",
+    },
+    {
+      phase: 4,
+      districts:
+        "Lucknow, Sitapur, Rae Bareli, Unnao, Kanpur, Fatehpur, Banda, Hamirpur, Jhansi, Lalitpur, Jalaun",
+      seats: 12,
+      date: "May 13, 2024",
+    },
+    {
+      phase: 5,
+      districts:
+        "Prayagraj, Pratapgarh, Barabanki, Sultanpur, Amethi, Gonda, Bahraich, Shravasti, Balrampur",
+      seats: 12,
+      date: "May 20, 2024",
+    },
+    {
+      phase: 6,
+      districts:
+        "Ayodhya, Ambedkar Nagar, Basti, S.K.Nagar, Gorakhpur, Maharajganj, Deoria, Kushinagar, Ballia",
+      seats: 14,
+      date: "May 25, 2024",
+    },
+    {
+      phase: 7,
+      districts:
+        "Varanasi, Chandauli, Mirzapur, Bhadohi, Jaunpur, Ghazipur, Azamgarh, Mau",
+      seats: 14,
+      date: "June 1, 2024",
+    },
   ],
 };
 
 // Party colors for visualization
 export const partyColors: Record<string, string> = {
-  "BJP": "#FF6B00",
-  "INC": "#19AAED",
-  "TMC": "#00A651",
-  "DMK": "#E40000",
-  "TDP": "#FFED00",
-  "JDU": "#003366",
-  "YSRCP": "#318CE7",
-  "AAP": "#0066B3",
-  "SP": "#FF0000",
-  "BSP": "#22409A",
-  "NCP": "#004B87",
-  "SHS": "#FF6600",
-  "BJD": "#009933",
-  "AIDMK": "#00FF00",
-  "CPM": "#FF0000",
-  "JMM": "#006400",
-  "Others": "#888888",
+  BJP: "#FF6B00",
+  INC: "#19AAED",
+  TMC: "#00A651",
+  DMK: "#E40000",
+  TDP: "#FFED00",
+  JDU: "#003366",
+  YSRCP: "#318CE7",
+  AAP: "#0066B3",
+  SP: "#FF0000",
+  BSP: "#22409A",
+  NCP: "#004B87",
+  SHS: "#FF6600",
+  BJD: "#009933",
+  AIDMK: "#00FF00",
+  CPM: "#FF0000",
+  JMM: "#006400",
+  Others: "#888888",
 };
 
 // Lok Sabha 2024 Results Summary (top parties)
@@ -188,7 +428,7 @@ export const ls2019Results = [
   { party: "DMK", seats: 23, voteShare: 1.79, color: "#E40000" },
   { party: "TMC", seats: 22, voteShare: 4.07, color: "#00A651" },
   { party: "YSRCP", seats: 22, voteShare: 2.53, color: "#318CE7" },
-  { party: "SHS", seats: 18, voteShare: 2.10, color: "#FF6600" },
+  { party: "SHS", seats: 18, voteShare: 2.1, color: "#FF6600" },
   { party: "JDU", seats: 16, voteShare: 1.46, color: "#003366" },
   { party: "BJD", seats: 12, voteShare: 1.66, color: "#009933" },
   { party: "Others", seats: 75, voteShare: 29.54, color: "#888888" },

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ interface UT {
 
 /**
  * Card component for displaying Union Territory data.
- * 
+ *
  * @param {Object} props - Component props.
  * @param {UT} props.ut - The UT data object.
  * @returns {JSX.Element} The rendered UT card.
@@ -32,20 +32,36 @@ export function UTCard({ ut }: { ut: UT }) {
       </div>
       <div className="grid grid-cols-2 gap-2 text-sm">
         <div>
-          <span className="text-[0.65rem] text-[var(--text-muted)] uppercase tracking-wider">Capital</span>
-          <p className="text-[var(--text-secondary)] font-medium">{ut.capital}</p>
+          <span className="text-[0.65rem] text-[var(--text-muted)] uppercase tracking-wider">
+            Capital
+          </span>
+          <p className="text-[var(--text-secondary)] font-medium">
+            {ut.capital}
+          </p>
         </div>
         <div>
-          <span className="text-[0.65rem] text-[var(--text-muted)] uppercase tracking-wider">LS Seats</span>
-          <p className="text-[var(--text-secondary)] font-bold">{ut.loksabha}</p>
+          <span className="text-[0.65rem] text-[var(--text-muted)] uppercase tracking-wider">
+            LS Seats
+          </span>
+          <p className="text-[var(--text-secondary)] font-bold">
+            {ut.loksabha}
+          </p>
         </div>
         <div>
-          <span className="text-[0.65rem] text-[var(--text-muted)] uppercase tracking-wider">Voters</span>
-          <p className="text-[var(--text-secondary)] font-medium">{ut.approxVoters}</p>
+          <span className="text-[0.65rem] text-[var(--text-muted)] uppercase tracking-wider">
+            Voters
+          </span>
+          <p className="text-[var(--text-secondary)] font-medium">
+            {ut.approxVoters}
+          </p>
         </div>
         <div>
-          <span className="text-[0.65rem] text-[var(--text-muted)] uppercase tracking-wider">Head</span>
-          <p className="text-[var(--text-secondary)] font-medium text-xs">{ut.cm}</p>
+          <span className="text-[0.65rem] text-[var(--text-muted)] uppercase tracking-wider">
+            Head
+          </span>
+          <p className="text-[var(--text-secondary)] font-medium text-xs">
+            {ut.cm}
+          </p>
         </div>
       </div>
       <div className="mt-3 pt-3 border-t border-[var(--border-color)] flex items-center justify-between">

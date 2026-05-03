@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useCallback } from 'react';
-import { usePathname } from 'next/navigation';
-import { initGoogleServices, logAnalyticsEvent } from '@/lib/firebase';
+import { useEffect, useCallback } from "react";
+import { usePathname } from "next/navigation";
+import { initGoogleServices, logAnalyticsEvent } from "@/lib/firebase";
 
 /**
  * Custom hook for Google Analytics page view tracking and event logging.
@@ -26,7 +26,7 @@ export function useAnalytics() {
 
   // Track page views on route change
   useEffect(() => {
-    logAnalyticsEvent('page_view', {
+    logAnalyticsEvent("page_view", {
       page_path: pathname,
       page_title: document.title,
       timestamp: new Date().toISOString(),
@@ -45,7 +45,7 @@ export function useAnalytics() {
         page_path: pathname,
       });
     },
-    [pathname]
+    [pathname],
   );
 
   return { trackEvent };
